@@ -1,0 +1,8 @@
+FROM ubuntu-podman-base
+
+RUN git clone "https://github.com/giuseppe/crun.git" \
+    && cd crun && git checkout -q 0.10
+
+WORKDIR crun
+
+RUN ./autogen.sh && ./configure && make

@@ -1,0 +1,8 @@
+FROM ubuntu-podman-base-go
+
+RUN git clone "https://github.com/containers/libpod.git" libpod \
+    && cd libpod && git checkout -q v1.6.1
+
+WORKDIR libpod
+
+RUN make podman BUILDTAGS="seccomp systemd exclude_graphdriver_btrfs exclude_graphdriver_devicemapper"

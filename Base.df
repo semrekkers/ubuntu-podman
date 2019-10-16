@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:19.04
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ca-certificates \
@@ -15,10 +15,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libcap-dev \
     libseccomp-dev \
     libyajl-dev \
-    # go-md2man \
+    go-md2man \
     libfuse3-dev \
     && apt-get clean
 
-COPY build-helpers.sh /usr/local/bin
 WORKDIR /root
-ENTRYPOINT [ "build-helpers.sh" ]

@@ -1,0 +1,8 @@
+FROM ubuntu-podman-base
+
+RUN git clone "https://github.com/containers/conmon.git" \
+    && cd conmon && git checkout -q v2.0.1
+
+WORKDIR conmon
+
+RUN make
