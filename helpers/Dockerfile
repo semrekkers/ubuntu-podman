@@ -1,0 +1,24 @@
+FROM ubuntu:18.04
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ca-certificates \
+    git \
+    gcc \
+    autoconf \
+    automake \
+    pkg-config \
+    make \
+    libtool \
+    libc6-dev \
+    libglib2.0-dev \
+    libsystemd-dev \
+    libcap-dev \
+    libseccomp-dev \
+    libyajl-dev \
+    # go-md2man \
+    libfuse3-dev \
+    && apt-get clean
+
+COPY build-helpers.sh /usr/local/bin
+WORKDIR /root
+ENTRYPOINT [ "build-helpers.sh" ]
