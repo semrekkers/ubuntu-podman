@@ -1,0 +1,9 @@
+FROM ubuntu-podman-base-go
+
+RUN git clone "https://github.com/containernetworking/plugins.git" \
+    && cd plugins && git checkout -q v0.8.2
+
+WORKDIR plugins
+
+RUN ./build_linux.sh
+RUN tar -cvaf /cni-plugins.tar.gz bin
