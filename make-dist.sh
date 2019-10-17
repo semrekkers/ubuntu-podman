@@ -35,15 +35,14 @@ cd deps/fuse-overlayfs
 docker build -f Dockerfile.static -t ubuntu-podman-dep-fuse-overlayfs .
 cd ../..
 
-docker build -f Base.df -t ubuntu-podman-base .
-docker build -f Base-go.df -t ubuntu-podman-base-go .
-
-docker build -f Conmon.df -t ubuntu-podman-conmon .
-docker build -f Crun.df -t ubuntu-podman-crun .
-docker build -f Fuse-overlayfs.df -t ubuntu-podman-fuse-overlayfs .
-docker build -f Slirp4netns.df -t ubuntu-podman-slirp4netns .
-docker build -f Cni-plugins.df -t ubuntu-podman-cni-plugins .
-docker build -f Podman.df -t ubuntu-podman-podman .
+docker build -f containerfiles/Base.df -t ubuntu-podman-base .
+docker build -f containerfiles/Base-go.df -t ubuntu-podman-base-go .
+docker build -f containerfiles/Conmon.df -t ubuntu-podman-conmon .
+docker build -f containerfiles/Crun.df -t ubuntu-podman-crun .
+docker build -f containerfiles/Fuse-overlayfs.df -t ubuntu-podman-fuse-overlayfs .
+docker build -f containerfiles/Slirp4netns.df -t ubuntu-podman-slirp4netns .
+docker build -f containerfiles/Cni-plugins.df -t ubuntu-podman-cni-plugins .
+docker build -f containerfiles/Podman.df -t ubuntu-podman-podman .
 
 mkdir -p dist/usr/bin
 mkdir -p dist/usr/share/containers
