@@ -9,6 +9,7 @@ if [ "$1" == "--clean" ]; then
         ubuntu-podman-fuse-overlayfs \
         ubuntu-podman-crun \
         ubuntu-podman-conmon \
+        ubuntu-podman-catatonit \
         ubuntu-podman-cni-plugins \
         ubuntu-podman-base-go \
         ubuntu-podman-base \
@@ -41,6 +42,7 @@ docker build -f containerfiles/Conmon.df -t ubuntu-podman-conmon .
 docker build -f containerfiles/Crun.df -t ubuntu-podman-crun .
 docker build -f containerfiles/Fuse-overlayfs.df -t ubuntu-podman-fuse-overlayfs .
 docker build -f containerfiles/Slirp4netns.df -t ubuntu-podman-slirp4netns .
+docker build -f containerfiles/Catatonit.df -t ubuntu-podman-catatonit .
 docker build -f containerfiles/Cni-plugins.df -t ubuntu-podman-cni-plugins .
 docker build -f containerfiles/Podman.df -t ubuntu-podman-podman .
 
@@ -54,6 +56,7 @@ install-from-image conmon bin/conmon dist/usr/bin/conmon
 install-from-image crun crun dist/usr/bin/crun
 install-from-image fuse-overlayfs fuse-overlayfs dist/usr/bin/fuse-overlayfs
 install-from-image slirp4netns slirp4netns dist/usr/bin/slirp4netns
+install-from-image catatonit catatonit dist/usr/bin/catatonit
 install-from-image podman bin/podman dist/usr/bin/podman
 
 echo "Installing CNI plugins..."
