@@ -74,4 +74,4 @@ cp -n config/87-podman-bridge.conflist dist/etc/cni/net.d
 cp -n config/seccomp.json dist/usr/share/containers
 
 echo "Creating distribution..."
-tar -cJf ubuntu-podman.tar.xz dist
+tar -cJf "ubuntu-podman-$(cat VERSION).tar.xz" dist README.md LICENSE VERSION
