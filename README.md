@@ -12,6 +12,7 @@ sudo apt install \
     libyajl2 \
     policykit-1 \
     dbus-x11 \
+    dbus-user-session \
     uidmap
 ```
 
