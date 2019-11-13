@@ -11,7 +11,7 @@ This redistribution contains:
 | Application                                                       | Version |
 | ----------------------------------------------------------------- | ------- |
 | [Podman](https://github.com/containers/libpod)                    | v1.6.3  |
-| [crun](https://github.com/containers/crun)                        | 0.10.4  |
+| [crun](https://github.com/containers/crun)                        | 0.10.5  |
 | [conmon](https://github.com/containers/conmon)                    | v2.0.2  |
 | [slirp4netns](https://github.com/rootless-containers/slirp4netns) | v0.4.2  |
 | [fuse-overlayfs](https://github.com/containers/fuse-overlayfs)    | v0.6.5  |
