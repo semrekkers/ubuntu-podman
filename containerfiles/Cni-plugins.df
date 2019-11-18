@@ -1,7 +1,7 @@
 FROM ubuntu-podman-base-go
 
 RUN git clone "https://github.com/containernetworking/plugins.git" \
-    && cd plugins && git checkout -q v0.8.2
+    && cd plugins && git checkout -q v0.8.3
 
 WORKDIR plugins
 

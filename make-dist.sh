@@ -28,7 +28,7 @@ function install-from-image {
 if [ ! -d deps/fuse-overlayfs ]; then
     git clone "https://github.com/containers/fuse-overlayfs.git" deps/fuse-overlayfs
     cd deps/fuse-overlayfs
-    git checkout -q v0.6.5
+    git checkout -q v0.7
     cd ../..
 fi
 
