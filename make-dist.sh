@@ -28,12 +28,12 @@ function install-from-image {
 if [ ! -d deps/fuse-overlayfs ]; then
     git clone "https://github.com/containers/fuse-overlayfs.git" deps/fuse-overlayfs
     cd deps/fuse-overlayfs
-    git checkout -q v0.7
+    git checkout -q v0.7.5
     cd ../..
 fi
 
 cd deps/fuse-overlayfs
-docker build -f Dockerfile.static -t ubuntu-podman-dep-fuse-overlayfs .
+docker build -v "$PWD:/build/fuse-overlayfs" -f Dockerfile.static.ubuntu -t ubuntu-podman-dep-fuse-overlayfs .
 cd ../..
 
 docker build -f containerfiles/Base.df -t ubuntu-podman-base .
@@ -54,7 +54,7 @@ mkdir -p dist/opt/cni
 
 install-from-image conmon bin/conmon dist/usr/bin/conmon
 install-from-image crun crun dist/usr/bin/crun
-install-from-image fuse-overlayfs fuse-overlayfs dist/usr/bin/fuse-overlayfs
+install-from-image fuse-overlayfs /build/fuse-overlayfs dist/usr/bin/fuse-overlayfs
 install-from-image slirp4netns slirp4netns dist/usr/bin/slirp4netns
 install-from-image catatonit catatonit dist/usr/bin/catatonit
 install-from-image podman bin/podman dist/usr/bin/podman
