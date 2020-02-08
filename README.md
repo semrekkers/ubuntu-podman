@@ -10,13 +10,13 @@ This redistribution contains:
 
 | Application                                                       | Version |
 | ----------------------------------------------------------------- | ------- |
-| [Podman](https://github.com/containers/libpod)                    | v1.7.0  |
-| [crun](https://github.com/containers/crun)                        | 0.11    |
-| [conmon](https://github.com/containers/conmon)                    | v2.0.9  |
+| [Podman](https://github.com/containers/libpod)                    | v1.8.0  |
+| [crun](https://github.com/containers/crun)                        | 0.12.1  |
+| [conmon](https://github.com/containers/conmon)                    | v2.0.10 |
 | [slirp4netns](https://github.com/rootless-containers/slirp4netns) | v0.4.3  |
-| [fuse-overlayfs](https://github.com/containers/fuse-overlayfs)    | v0.7.5  |
-| [CNI plugins](https://github.com/containernetworking/plugins)     | v0.8.4  |
-| [catatonit](https://github.com/openSUSE/catatonit)                | 99e6930 |
+| [fuse-overlayfs](https://github.com/containers/fuse-overlayfs)    | v0.7.6  |
+| [CNI plugins](https://github.com/containernetworking/plugins)     | v0.8.5  |
+| [catatonit](https://github.com/openSUSE/catatonit)                | f700039 |
 
 ## Setup
 

@@ -1,7 +1,7 @@
 FROM ubuntu-podman-base
 
 RUN git clone "https://github.com/openSUSE/catatonit.git" \
-    && cd catatonit && git checkout -q 99e69301037aca182952cdf334d5d96f1b491168
+    && cd catatonit && git checkout -q f700039f399d0ad143e11c50cc36b8b3b5126223
 
 WORKDIR catatonit
 

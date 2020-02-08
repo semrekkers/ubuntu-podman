@@ -1,7 +1,7 @@
 FROM ubuntu-podman-base-go
 
 RUN git clone "https://github.com/containers/libpod.git" \
-    && cd libpod && git checkout -q v1.7.0
+    && cd libpod && git checkout -q v1.8.0
 
 WORKDIR libpod
 

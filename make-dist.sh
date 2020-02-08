@@ -13,9 +13,8 @@ if [ "$1" == "--clean" ]; then
         ubuntu-podman-cni-plugins \
         ubuntu-podman-base-go \
         ubuntu-podman-base \
-        ubuntu-podman-dep-fuse-overlayfs
-    rm -rf deps
-    rm -rf dist
+        ubuntu-podman-dep-fuse-overlayfs || true
+    rm -rf deps dist
 fi
 
 function install-from-image {
@@ -28,12 +27,12 @@ function install-from-image {
 if [ ! -d deps/fuse-overlayfs ]; then
     git clone "https://github.com/containers/fuse-overlayfs.git" deps/fuse-overlayfs
     cd deps/fuse-overlayfs
-    git checkout -q v0.7.5
+    git checkout -q v0.7.6
     cd ../..
 fi
 
 cd deps/fuse-overlayfs
-docker build -v "$PWD:/build/fuse-overlayfs" -f Dockerfile.static.ubuntu -t ubuntu-podman-dep-fuse-overlayfs .
+docker build -f Dockerfile.static.ubuntu -t ubuntu-podman-dep-fuse-overlayfs .
 cd ../..
 
 docker build -f containerfiles/Base.df -t ubuntu-podman-base .
